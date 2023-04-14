@@ -1,0 +1,97 @@
+@mixin initialStyling {
+  * {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+@mixin boxShadow(
+  $x,
+  $y,
+  $blur,
+  $spread,
+  $color,
+  $x1,
+  $y1,
+  $blur1,
+  $spread1,
+  $color1
+) {
+  box-shadow: $x $y $blur $spread $color, $x1 $y1 $blur1 $spread1 $color1;
+}
+
+@include initialStyling;
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  .buttonContainer {
+    margin-top: 10px;
+
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    justify-items: center;
+    .buttons {
+      font-size: 25px;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      @include boxShadow(
+        4px,
+        4px,
+        12px,
+        -1px,
+        rgb(128, 124, 124),
+        -10px,
+        -3px,
+        12px,
+        -6px,
+        #dcebe4
+      );
+      transition: all ease 200ms;
+      &:hover {
+        transform: scale((0.9));
+        @include boxShadow(
+          4px,
+          4px,
+          12px,
+          -1px,
+          rgb(48, 46, 46),
+          -10px,
+          -3px,
+          12px,
+          -6px,
+          #8bf3c3
+        );
+        cursor: pointer;
+      }
+      &:active {
+        transform: scale(0.5);
+      }
+    }
+    #equal {
+      background-color: rgb(14, 213, 170);
+    }
+  }
+  #input_field {
+    background-color: rgb(162, 240, 226);
+    height: 80px;
+    width: 50%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

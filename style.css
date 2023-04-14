@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+.container .buttonContainer {
+  margin-top: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  justify-items: center;
+}
+.container .buttonContainer .buttons {
+  font-size: 25px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  box-shadow: 4px 4px 12px -1px rgb(128, 124, 124), -10px -3px 12px -6px #dcebe4;
+  transition: all ease 200ms;
+}
+.container .buttonContainer .buttons:hover {
+  transform: scale(0.9);
+  box-shadow: 4px 4px 12px -1px rgb(48, 46, 46), -10px -3px 12px -6px #8bf3c3;
+  cursor: pointer;
+}
+.container .buttonContainer .buttons:active {
+  transform: scale(0.5);
+}
+.container .buttonContainer #equal {
+  background-color: rgb(14, 213, 170);
+}
+.container #input_field {
+  background-color: rgb(162, 240, 226);
+  height: 80px;
+  width: 50%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
